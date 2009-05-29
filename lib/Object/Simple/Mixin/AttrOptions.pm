@@ -1,6 +1,6 @@
 package Object::Simple::Mixin::AttrOptions;
 
-our $VERSION = '0.0201';
+our $VERSION = '0.0202';
 
 use warnings;
 use strict;
@@ -9,10 +9,10 @@ use base 'Exporter';
 our @EXPORT = qw/attr_options/;
 
 # get attribute options
-sub attr_options{
+sub attr_options {
     my $invocant = shift;
     my $class = ref $invocant || $invocant;
-    return $Object::Simple::META->{ attr_options } || undef;
+    return $Object::Simple::META->{$class}{attr_options} || undef;
 }
 
 =head1 NAME
@@ -21,20 +21,20 @@ Object::Simple::Mixin::AttrOptions - Mixin class to get attribute options for Ob
 
 =head1 VERSION
 
-Version 0.0201
+Version 0.0202
 
 =cut
-
-
 
 =head1 SYNOPSIS
 
     ### Book.pm
     package Book;
-    use Object::Simple( mixin => 'Object::Simple::Mixin::AttrOptions' );
+    use Object::Simple(
+        mixins => ['Object::Simple::Mixin::AttrOptions']
+    );
     
     sub title  : Attr { default => 1, read_only => 1 }
-    sub author : Attr { default => 2, type => 'Str' }
+    sub author : Attr { default => 2, chained => 1 }
     
     Object::Simple->end;
     
@@ -43,6 +43,10 @@ Version 0.0201
     
     my $book = Book->new;
     my $attr_options = $book->attr_options;
+    
+    # or
+    
+    my $attr_options = Book->attr_options;
 
 =head1 EXPORT
 
@@ -61,10 +65,8 @@ get attribute options
 attr_options return hash reference like this.
 
     {
-        Book => {
-            title  => { default => 1, read_only => 1 },
-            author => { default => 2, type => 'Str' }
-        }
+        title  => {default => 1, read_only => 1},
+        author => {default => 2}
     }
 
 =head1 AUTHOR
