@@ -1,12 +1,8 @@
 package Object::Simple::Mixin::AttrOptions;
-
-our $VERSION = '0.0202';
-
 use warnings;
 use strict;
 
-use base 'Exporter';
-our @EXPORT = qw/attr_options/;
+our $VERSION = '0.0203';
 
 # get attribute options
 sub attr_options {
@@ -17,11 +13,11 @@ sub attr_options {
 
 =head1 NAME
 
-Object::Simple::Mixin::AttrOptions - Mixin class to get attribute options for Object::Simple
+Object::Simple::Mixin::AttrOptions - Mixin to get Object::Simple attribute options
 
 =head1 VERSION
 
-Version 0.0202
+Version 0.0203
 
 =cut
 
@@ -36,7 +32,7 @@ Version 0.0202
     sub title  : Attr { default => 1, read_only => 1 }
     sub author : Attr { default => 2, chained => 1 }
     
-    Object::Simple->end;
+    Object::Simple->build_class;
     
     ### using Book.pm
     use Book;
@@ -49,8 +45,6 @@ Version 0.0202
     my $attr_options = Book->attr_options;
 
 =head1 EXPORT
-
-Following method is exported.
 
 attr_options
 

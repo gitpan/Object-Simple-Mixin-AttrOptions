@@ -8,7 +8,7 @@ WriteMakefile
           'VERSION_FROM' => 'lib/Object/Simple/Mixin/AttrOptions.pm',
           'PREREQ_PM' => {
                            'Test::More' => 0,
-                           'Object::Simple' => '0.0203'
+                           'Object::Simple' => '2.0003'
                          }
         )
 ;

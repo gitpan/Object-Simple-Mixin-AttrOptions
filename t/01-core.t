@@ -2,7 +2,7 @@ use Test::More 'no_plan';
 use strict;
 use warnings;
 
-use lib 't/02-core';
+use lib 't/01-core';
 
 use T1;
 {
