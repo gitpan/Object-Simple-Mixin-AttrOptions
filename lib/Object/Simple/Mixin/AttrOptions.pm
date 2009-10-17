@@ -2,7 +2,7 @@ package Object::Simple::Mixin::AttrOptions;
 use warnings;
 use strict;
 
-our $VERSION = '0.0203';
+our $VERSION = '0.0301';
 
 # get attribute options
 sub attr_options {
@@ -13,11 +13,16 @@ sub attr_options {
 
 =head1 NAME
 
-Object::Simple::Mixin::AttrOptions - Mixin to get Object::Simple attribute options
+Object::Simple::Mixin::AttrOptions - Mixin to get attr options [DISCOURAGED]
 
+=head1 CAUTION
+
+This module is discouraged now, because I feel attribute is not explicit for lightweight language.
+
+I will not maintain this module.
 =head1 VERSION
 
-Version 0.0203
+Version 0.0301
 
 =cut
 

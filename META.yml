@@ -1,9 +1,9 @@
 ---
 name: Object-Simple-Mixin-AttrOptions
-version: 0.0203
+version: 0.0301
 author:
   - 'Yuki Kimoto <kimoto.yuki@gmail.com>'
-abstract: Mixin to get Object::Simple attribute options
+abstract: 'Mixin to get attr options [DISCOURAGED]'
 license: perl
 resources:
   license: ~
@@ -13,7 +13,7 @@ build_requires:
 provides:
   Object::Simple::Mixin::AttrOptions:
     file: lib/Object/Simple/Mixin/AttrOptions.pm
-    version: 0.0203
+    version: 0.0301
 generated_by: Module::Build version 0.31012
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
